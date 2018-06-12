@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h4>
+      todaydate : {{todayDate}}
+   <span changeText>Welcome to {{ title | lowercase}}!</span> </h4>
+ <!-- <span>{{todate | date:'y-m-d'}}</span> -->
+</div>
+<div>
+  Months:
+    <select (change)="changemonth($event)">
+      <option *ngFor="let i of months">{{i}}</option>
+    </select>
+  </div>
+  <div>
+  <span *ngIf="isValid; then condition1 else condition2">
+its True</span>
+<ng-template #condition1>this is condition1</ng-template>
+<ng-template #condition2>this is condition2</ng-template>
+  </div>
+
+
+  <div>
+    <span *ngIf="isValid; then condition3 else condition4"></span>
+    <ng-template #condition3>this is condition3</ng-template>
+    <ng-template #condition4>this is condition4</ng-template>
+  </div>
+  <button (click)="clickFun($event)">Click Me</button>
+  <span>
+    squre root of 25 is {{25 | sqrt}}
+   
+  </span>
+  
+
+  <a routerLink ="new-cmp">New Component</a>
+
+  <router-outlet></router-outlet>
+
